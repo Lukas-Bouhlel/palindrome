@@ -1,0 +1,10 @@
+stages:
+  - test
+
+test_node:
+  stage: test
+  image: node:18
+  script:
+    - npm install
+    - npm run lint
+    - npm test
