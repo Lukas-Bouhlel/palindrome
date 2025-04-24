@@ -1,6 +1,7 @@
 const { execSync } = require('child_process');
 const path = require('path');
 const fs = require('fs');
+process.env.CI = 'true'; 
 
 // Définir le chemin absolu vers le fichier shell
 const releaseScript = path.resolve(__dirname, 'release.sh');
