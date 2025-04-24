@@ -25,7 +25,7 @@ case $choix in
     ;;
   2)
     # Lancer standard-version avec l'option --release-as pour définir la version
-    npx standard-version --release-as $bump --skip.changelog --no-verify
+    npx standard-version --release-as $bump --skip.changelog
     ;;
   3)
     # Lancer le script personnalisé (release.cjs)
