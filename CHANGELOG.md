@@ -23,3 +23,6 @@ All notable changes to this project will be documented in this file. See [standa
 ### [1.0.3](https://github.com/Lukas-Bouhlel/palindrome/compare/v1.0.2...v1.0.3) (2025-04-24)
 ## 1.2.3 - 2025-04-24
 - Release automatique
+
+## 1.3.0 - 2025-04-24
+- Release automatique
