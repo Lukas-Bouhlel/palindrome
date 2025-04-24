@@ -55,7 +55,8 @@ execSync(`git commit -m "chore(release): v${newVersion}"`, {
   stdio: 'inherit',
 });
 execSync(`git tag v${newVersion}`, { stdio: 'inherit' });
-execSync('git push && git push --tags', { stdio: 'inherit' });
+const branch = process.env.GITHUB_REF?.split('/').pop() || 'main';
+execSync(`git push origin HEAD:${branch} && git push --tags`, { stdio: 'inherit' });
 
 // 4. Publish
 execSync('npm publish', { stdio: 'inherit' });
