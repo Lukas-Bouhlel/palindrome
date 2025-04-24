@@ -1,36 +1,63 @@
 name: Node.js CI
 
-on: [push]
+on: [push, pull_request]
+
+permissions:
+  contents: write # 👉 nécessaire pour les push et tag depuis GitHub Actions
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
-  build:
+  install:
+    name: 📦 Installation
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Set up Git user for commit
-        run: |
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "GitHub Actions"
-
-      - name: Use Node.js
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
           node-version: '18'
+      - run: npm install
 
-      - name: Install dependencies
-        run: npm install
+  format:
+    name: 💅 Formatage (Prettier)
+    runs-on: ubuntu-latest
+    needs: install
+    steps:
+      - uses: actions/checkout@v3
+      - run: npm ci
+      - run: npm run format -- --check
 
-      - name: Run format
-        run: npm run format
+  lint:
+    name: 🧹 Lint (ESLint)
+    runs-on: ubuntu-latest
+    needs: install
+    steps:
+      - uses: actions/checkout@v3
+      - run: npm ci
+      - run: npm run lint
 
-      - name: Run lint
-        run: npm run lint
+  test:
+    name: ✅ Tests unitaires
+    runs-on: ubuntu-latest
+    needs: install
+    steps:
+      - uses: actions/checkout@v3
+      - run: npm ci
+      - run: npm test
 
-      - name: Run tests
-        run: npm test
-
-      - name: Run release
-        run: npm run release
+  release:
+    name: 🚀 Release & Publication
+    runs-on: ubuntu-latest
+    needs: [test, lint, format]
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          registry-url: 'https://registry.npmjs.org'
+      - run: npm ci
+      - run: npm run release
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
