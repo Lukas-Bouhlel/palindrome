@@ -158,3 +158,6 @@
 - Auto release
 ## v0.0.16 - 2025-04-24
 - Auto release
+
+## v0.0.17 - 2025-04-24
+- Auto release
