@@ -1,14 +1,12 @@
-const { execSync } = require("child_process");
-const fs = require("fs");
-const path = require("path");
+const { execSync } = require('child_process');
 
-const bump = process.argv[2] || "patch"; // patch, minor, major
+const bump = process.argv[2] || 'patch'; // patch, minor, major
 
 // Fonction utilitaire : obtenir la dernière version taguée
 function getLatestGitTag() {
   try {
-    const tag = execSync("git describe --tags --abbrev=0").toString().trim();
-    return tag.startsWith("v") ? tag.slice(1) : tag;
+    const tag = execSync('git describe --tags --abbrev=0').toString().trim();
+    return tag.startsWith('v') ? tag.slice(1) : tag;
   } catch {
     return null;
   }
@@ -16,27 +14,29 @@ function getLatestGitTag() {
 
 // Fonction : incrémente une version semver
 function bumpVersion(version, level) {
-  const parts = version.split(".").map(Number);
-  if (level === "major") {
+  const parts = version.split('.').map(Number);
+  if (level === 'major') {
     parts[0]++;
     parts[1] = 0;
     parts[2] = 0;
-  } else if (level === "minor") {
+  } else if (level === 'minor') {
     parts[1]++;
     parts[2] = 0;
   } else {
     parts[2]++;
   }
-  return parts.join(".");
+  return parts.join('.');
 }
 
 // 1. Vérifie si le tag existe déjà
 let latestTag = getLatestGitTag();
-let newVersion = bumpVersion(latestTag || "0.0.0", bump);
+let newVersion = bumpVersion(latestTag || '0.0.0', bump);
 
 try {
   execSync(`git rev-parse v${newVersion}`);
-  console.log(`⚠️ Tag v${newVersion} existe déjà. On passe à la version suivante...`);
+  console.log(
+    `⚠️ Tag v${newVersion} existe déjà. On passe à la version suivante...`
+  );
   newVersion = bumpVersion(newVersion, bump);
 } catch {
   // Tag doesn't exist, continue
@@ -45,14 +45,17 @@ try {
 console.log(`🚀 Nouvelle version : v${newVersion}`);
 
 // 2. Met à jour le package.json
-execSync(`npm version ${newVersion} --no-git-tag-version`, { stdio: "inherit" });
-
+execSync(`npm version ${newVersion} --no-git-tag-version`, {
+  stdio: 'inherit',
+});
 
 // 3. Commit + tag + push
-execSync("git add .", { stdio: "inherit" });
-execSync(`git commit -m "chore(release): v${newVersion}"`, { stdio: "inherit" });
-execSync(`git tag v${newVersion}`, { stdio: "inherit" });
-execSync("git push && git push --tags", { stdio: "inherit" });
+execSync('git add .', { stdio: 'inherit' });
+execSync(`git commit -m "chore(release): v${newVersion}"`, {
+  stdio: 'inherit',
+});
+execSync(`git tag v${newVersion}`, { stdio: 'inherit' });
+execSync('git push && git push --tags', { stdio: 'inherit' });
 
 // 4. Publish
-execSync("npm publish", { stdio: "inherit" });
+execSync('npm publish', { stdio: 'inherit' });
