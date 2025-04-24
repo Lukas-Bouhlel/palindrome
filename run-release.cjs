@@ -29,9 +29,10 @@ function commitChanges() {
         'Modifications non commités, ajout et commit des changements...'
       );
       execSync('git add .', { stdio: 'inherit' });
-      execSync('git commit -m "chore: prepare for release"', {
+      execSync('git commit -m "chore: update changelog for release"', {
         stdio: 'inherit',
       });
+      execSync('git push', { stdio: 'inherit' }); // Push les modifications sur le repo
     } else {
       console.log('Aucun changement non commités.');
     }
@@ -55,8 +56,6 @@ try {
 
   // Mettre à jour le changelog
   updateChangelog(newVersion);
-
-  console.log(newVersion);
 
   console.log('✅ Release terminée.');
 } catch (err) {
