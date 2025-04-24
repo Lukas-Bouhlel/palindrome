@@ -22,7 +22,7 @@ echo "🚀 Lancement de la release ($bump)..."
 case $choix in
   1)
     # Lancer release-it sans confirmation en utilisant l'option --yes
-    npx release-it $bump --ci --no-git.push
+    npx release-it $bump --ci
     ;;
   2)
     # Lancer semantic-release
