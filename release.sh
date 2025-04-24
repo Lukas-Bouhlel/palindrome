@@ -10,7 +10,7 @@ echo "4) script personnalisé (release.cjs)"
 echo "-------------------------------"
 
 # Choix de la méthode de release
-read -p "Choix [1-4] : " choix
+read -p "Choix [1-4] [default: 4] : " choix
 # Type de version (patch | minor | major) avec valeur par défaut
 read -p "Type de version (patch | minor | major) [default: patch] : " bump
 
@@ -37,8 +37,7 @@ case $choix in
     node release.cjs $bump
     ;;
   *)
-    echo "❌ Choix invalide. Abandon."
-    exit 1
+    node release.cjs $bump
     ;;
 esac
 
