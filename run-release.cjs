@@ -1,4 +1,23 @@
 const { execSync } = require('child_process');
+const path = require('path');
+const fs = require('fs');
+process.env.CI = 'true'; 
+
+// Définir le chemin absolu vers le fichier shell
+const releaseScript = path.resolve(__dirname, 'release.sh');
+
+// Définir le chemin vers bash (pour Windows, avec Git Bash)
+const bashPath = 'C:\\Program Files\\Git\\bin\\bash.exe'; // Ajuste ce chemin si nécessaire
+
+// Fonction pour mettre à jour le changelog
+function updateChangelog(newVersion) {
+  const changelogPath = path.resolve(__dirname, 'CHANGELOG.md');
+  const changelogEntry = `\n## v${newVersion} - ${new Date().toISOString().split("T")[0]}\n- Auto release\n`;
+
+  // Ajout de l'entrée au changelog
+  fs.appendFileSync(changelogPath, changelogEntry);
+  console.log(`Changelog mis à jour avec la version v${newVersion}`);
+}
 
 // Fonction pour vérifier et commiter les fichiers modifiés
 function commitChanges() {
