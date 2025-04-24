@@ -32,7 +32,7 @@ case $choix in
     node release.cjs $bump
     ;;
   *)
-    npx release-it $bump --ci --no-changelog
+    npx release-it $bump --ci
     ;;
 esac
 
