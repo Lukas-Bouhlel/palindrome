@@ -1,24 +1,23 @@
 {
   "name": "palindrome-project",
-  "version": "1.1.1",
+  "version": "1.1.0",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "test": "jest",
     "lint": "eslint .",
-    "release": "standard-version",
-    "release2": "release-it"
+    "release1": "release-it --no-git.requireCleanWorkingDir",
+    "release2": "semantic-release --dry-run",
+    "release3": "standard-version --release-as minor"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "@changesets/cli": "^2.29.2",
     "eslint": "^9.25.1",
     "jest": "^29.7.0",
     "release-it": "^19.0.1",
-    "semantic-release": "^24.2.3",
     "standard-version": "^9.5.0"
   }
 }
