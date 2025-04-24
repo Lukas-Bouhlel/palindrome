@@ -4,8 +4,8 @@ const bump = process.argv[2] || 'patch'; // patch, minor, major
 
 try {
   // Configuration Git
-  execSync(`git config user.name "github-actions[bot]"`);
-  execSync(`git config user.email "github-actions[bot]@users.noreply.github.com"`);
+  execSync('git config user.name "github-actions[bot]"');
+  execSync('git config user.email "github-actions[bot]@users.noreply.github.com"');
 
   // Mise à jour de l'URL du remote avec le token sécurisé
   const repo = process.env.GITHUB_REPOSITORY; // e.g. "Lukas-Bouhlel/palindrome"
