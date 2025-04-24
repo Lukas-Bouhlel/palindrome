@@ -1,0 +1,25 @@
+{
+    "git": {
+      "commit": true,
+      "commitMessage": "chore(release): v${version}",
+      "tag": true,
+      "push": true
+    },
+    "npm": {
+      "publish": true
+    },
+    "changelog": {
+      "filename": "CHANGELOG.md",
+      "commit": true,
+      "tag": true
+    },
+    "hooks": {
+      "before:init": [
+        "echo 'Démarrage de la release...'"
+      ],
+      "after:release": [
+        "echo 'Release terminée avec succès.'"
+      ]
+    }
+  }
+  
