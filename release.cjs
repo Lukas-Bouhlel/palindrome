@@ -66,9 +66,6 @@ try {
   execSync('git push --tags', {
     stdio: 'inherit',
   });
-  
-  // Publication sur npm
-  execSync('npm publish', { stdio: 'inherit' });
 
   console.log(`✅ Release v${newVersion} publiée avec succès.`);
 } catch (err) {
