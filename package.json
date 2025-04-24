@@ -1,6 +1,6 @@
 {
   "name": "palindrome-project",
-  "version": "2.2.19",
+  "version": "2.2.20",
   "main": "index.js",
   "type": "module",
   "scripts": {
