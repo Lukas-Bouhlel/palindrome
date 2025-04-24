@@ -52,11 +52,12 @@ const changelogPath = path.resolve("CHANGELOG.md");
 const changelogEntry = `\n## v${newVersion} - ${new Date().toISOString().split("T")[0]}\n- Auto release\n`;
 fs.appendFileSync(changelogPath, changelogEntry);
 
+
 // 4. Commit + tag + push
 execSync("git add .", { stdio: "inherit" });
 execSync(`git commit -m "chore(release): v${newVersion}"`, { stdio: "inherit" });
 execSync(`git tag v${newVersion}`, { stdio: "inherit" });
 execSync("git push && git push --tags", { stdio: "inherit" });
 
-// 5. (Optionnel) Publish
-// execSync("npm publish", { stdio: "inherit" });
+// 5. Publish
+execSync("npm publish", { stdio: "inherit" });
