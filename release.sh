@@ -10,7 +10,7 @@ echo "4) script personnalisé (release.cjs)"
 echo "-------------------------------"
 
 # Choix de la méthode de release
-read -p "Choix [1-4] [default: 43 : " choix
+read -p "Choix [1-3] [default: 2] : " choix
 # Type de version (patch | minor | major) avec valeur par défaut
 read -p "Type de version (patch | minor | major) [default: patch] : " bump
 
@@ -25,14 +25,10 @@ case $choix in
     npx release-it $bump --ci --no-changelog
     ;;
   2)
-    # Lancer semantic-release
-    npx standard-version --release-as $bump --skip.changelog --no-verify
-    ;;
-  3)
     # Lancer standard-version avec l'option --release-as pour définir la version
     npx standard-version --release-as $bump --no-changelog
     ;;
-  4)
+  3)
     # Lancer le script personnalisé (release.cjs)
     node release.cjs $bump
     ;;
