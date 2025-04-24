@@ -1,8 +1,6 @@
 const { execSync } = require('child_process');
 
-const bump = process.argv[2] || 'patch'; // patch, minor, major
-const path = require('path');
-const cwd = path.resolve(__dirname); // ou le chemin de ton projet
+const bump = process.argv[2] || 'patch';
 
 try {
   // Fonction pour obtenir le dernier tag
