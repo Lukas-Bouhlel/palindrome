@@ -156,11 +156,3 @@
 
 ## v2.2.20 - 2025-04-24
 - Auto release
-## v0.0.5 - 2025-04-24
-- Auto release
-
-## v0.0.6 - 2025-04-24
-- Auto release
-
-## v0.0.7 - 2025-04-24
-- Auto release
