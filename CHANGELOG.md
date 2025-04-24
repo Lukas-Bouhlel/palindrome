@@ -68,3 +68,12 @@
 
 ## v2.2.4 - 2025-04-24
 - Auto release
+
+## v2.2.5 - 2025-04-24
+- Auto release
+
+## v2.2.6 - 2025-04-24
+- Auto release
+
+## v2.2.7 - 2025-04-24
+- Auto release
