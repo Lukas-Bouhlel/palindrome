@@ -56,3 +56,6 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## v2.0.20 - 2025-04-24
 - Auto release
+
+## v2.0.21 - 2025-04-24
+- Auto release
