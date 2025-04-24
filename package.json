@@ -6,10 +6,7 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint .",
-    "release1": "release-it",
-    "release2": "semantic-release",
-    "release3": "standard-version",
-    "release4": "node release.cjs"
+    "release": "node run-release.cjs"
   },
   "keywords": [],
   "author": "",
