@@ -10,7 +10,7 @@ echo "4) script personnalisé (release.cjs)"
 echo "-------------------------------"
 
 # Choix de la méthode de release
-read -p "Choix [1-4] [default: 4] : " choix
+read -p "Choix [1-4] [default: 43 : " choix
 # Type de version (patch | minor | major) avec valeur par défaut
 read -p "Type de version (patch | minor | major) [default: patch] : " bump
 
