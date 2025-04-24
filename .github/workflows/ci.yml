@@ -3,7 +3,7 @@ name: Node.js CI
 on: [push, pull_request]
 
 permissions:
-  contents: write # 👉 nécessaire pour les push et tag depuis GitHub Actions
+  contents: write
 
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
