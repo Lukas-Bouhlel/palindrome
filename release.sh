@@ -26,7 +26,7 @@ case $choix in
     ;;
   2)
     # Lancer semantic-release
-    npx semantic-release --no-changelog
+    npx standard-version --release-as minor --skip.changelog --no-verify
     ;;
   3)
     # Lancer standard-version avec l'option --release-as pour définir la version

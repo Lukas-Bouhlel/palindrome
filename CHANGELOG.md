@@ -39,13 +39,7 @@
 ## v2.0.18 - 2025-04-24
 - Auto release
 
-## v2.0.18 - 2025-04-24
-- Auto release
-
 ## v2.0.19 - 2025-04-24
-- Auto release
-
-## v2.0.20 - 2025-04-24
 - Auto release
 
 ## v2.0.20 - 2025-04-24
@@ -55,12 +49,6 @@
 - Auto release
 
 ## v2.0.22 - 2025-04-24
-- Auto release
-
-## v2.0.23 - 2025-04-24
-- Auto release
-
-## v2.0.23 - 2025-04-24
 - Auto release
 
 ## v2.0.23 - 2025-04-24
