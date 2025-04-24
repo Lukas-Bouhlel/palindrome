@@ -1,14 +1,14 @@
 {
   "name": "palindrome-project",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "test": "jest",
     "lint": "eslint .",
-    "release1": "release-it --no-git.requireCleanWorkingDir",
-    "release2": "semantic-release --dry-run",
-    "release3": "standard-version --release-as minor"
+    "release1": "release-it",
+    "release2": "semantic-release",
+    "release3": "standard-version"
   },
   "keywords": [],
   "author": "",
