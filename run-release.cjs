@@ -56,7 +56,7 @@ try {
   // Mettre à jour le changelog
   updateChangelog(newVersion);
 
-  console.log(newVersion)
+  console.log(newVersion);
 
   console.log('✅ Release terminée.');
 } catch (err) {
