@@ -5,18 +5,6 @@ const path = require('path');
 const cwd = path.resolve(__dirname); // ou le chemin de ton projet
 
 try {
-  // Configuration Git
-  execSync('git config user.name "github-actions[bot]"', { cwd });
-  execSync('git config user.email "github-actions[bot]@users.noreply.github.com"', { cwd });
-  console.log(execSync('git config user.name').toString());
-  console.log(execSync('git config user.email').toString());
-    
-  // Mise à jour de l'URL du remote avec le token sécurisé
-  const repo = process.env.GITHUB_REPOSITORY; // e.g. "Lukas-Bouhlel/palindrome"
-  const token = process.env.GITHUB_TOKEN;
-  const safeToken = encodeURIComponent(token);
-  execSync(`git remote set-url origin https://x-access-token:${safeToken}@github.com/${repo}.git`);
-
   // Fonction pour obtenir le dernier tag
   function getLatestGitTag() {
     try {
