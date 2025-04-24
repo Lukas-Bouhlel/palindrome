@@ -4,9 +4,8 @@
 
 echo "🔁 Sélectionne une méthode de release :"
 echo "1) release-it"
-echo "2) semantic-release"
-echo "3) standard-version"
-echo "4) script personnalisé (release.cjs)"
+echo "2) standard-version"
+echo "3) script personnalisé (release.cjs)"
 echo "-------------------------------"
 
 # Choix de la méthode de release
