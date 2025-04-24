@@ -47,17 +47,12 @@ console.log(`🚀 Nouvelle version : v${newVersion}`);
 // 2. Met à jour le package.json
 execSync(`npm version ${newVersion} --no-git-tag-version`, { stdio: "inherit" });
 
-// 3. Met à jour le changelog
-const changelogPath = path.resolve("CHANGELOG.md");
-const changelogEntry = `\n## v${newVersion} - ${new Date().toISOString().split("T")[0]}\n- Auto release\n`;
-fs.appendFileSync(changelogPath, changelogEntry);
 
-
-// 4. Commit + tag + push
+// 3. Commit + tag + push
 execSync("git add .", { stdio: "inherit" });
 execSync(`git commit -m "chore(release): v${newVersion}"`, { stdio: "inherit" });
 execSync(`git tag v${newVersion}`, { stdio: "inherit" });
 execSync("git push && git push --tags", { stdio: "inherit" });
 
-// 5. Publish
+// 4. Publish
 execSync("npm publish", { stdio: "inherit" });

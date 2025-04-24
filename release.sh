@@ -22,15 +22,15 @@ echo "🚀 Lancement de la release ($bump)..."
 case $choix in
   1)
     # Lancer release-it sans confirmation en utilisant l'option --yes
-    npx release-it $bump --ci
+    npx release-it $bump --ci --no-changelog
     ;;
   2)
     # Lancer semantic-release
-    npx semantic-release
+    npx semantic-release --no-changelog
     ;;
   3)
     # Lancer standard-version avec l'option --release-as pour définir la version
-    npx standard-version --release-as $bump
+    npx standard-version --release-as $bump --no-changelog
     ;;
   4)
     # Lancer le script personnalisé (release.cjs)
