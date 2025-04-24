@@ -11,6 +11,3 @@ test_lint_and_unit:
     - npm install
     - npm run lint
     - npm test
-  only:
-    - main
-    - merge_requests
