@@ -59,10 +59,14 @@ try {
 
   // Création du tag et push du tag vers GitHub
   execSync(`git tag v${newVersion}`, { stdio: 'inherit' });
-  execSync('git push origin HEAD:main && git push --tags', {
+  execSync('git push origin HEAD:main', {
     stdio: 'inherit',
   });
 
+  execSync('git push --tags', {
+    stdio: 'inherit',
+  });
+  
   // Publication sur npm
   execSync('npm publish', { stdio: 'inherit' });
 
