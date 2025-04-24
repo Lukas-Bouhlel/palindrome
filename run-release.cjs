@@ -7,7 +7,7 @@ process.env.CI = 'true';
 const releaseScript = path.resolve(__dirname, 'release.sh');
 
 // Définir le chemin vers bash (pour Windows, avec Git Bash)
-const bashPath = 'C:\\Program Files\\Git\\bin\\bash.exe'; // Ajuste ce chemin si nécessaire
+const bashPath = 'bash';
 
 // Fonction pour mettre à jour le changelog
 function updateChangelog(newVersion) {
