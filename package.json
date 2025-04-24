@@ -8,7 +8,8 @@
     "lint": "eslint .",
     "release1": "release-it",
     "release2": "semantic-release",
-    "release3": "standard-version"
+    "release3": "standard-version",
+    "release4": "node release.cjs"
   },
   "keywords": [],
   "author": "",
