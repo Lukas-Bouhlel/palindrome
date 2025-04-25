@@ -70,9 +70,13 @@ try {
   // Mise à jour de package.json sans créer un tag Git
   console.log(`Tentative de mise à jour de la version vers v${newVersion}`);
   try {
-    execSync(`npm version ${newVersion} --no-git-tag-version`, { stdio: 'inherit' });
+    execSync(`npm version ${newVersion} --no-git-tag-version`, {
+      stdio: 'inherit',
+    });
   } catch (err) {
-    console.error(`Erreur lors de la mise à jour de la version : ${err.message}`);
+    console.error(
+      `Erreur lors de la mise à jour de la version : ${err.message}`
+    );
     throw err;
   }
 
