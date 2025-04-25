@@ -145,15 +145,23 @@
 - Auto release
 
 ## v0.0.41 - 2025-04-25
+
 - Auto release
 
 ## v0.0.42 - 2025-04-25
+
 - Auto release
 
 ## v0.0.43 - 2025-04-25
+
 - Auto release
 
 ## v0.0.44 - 2025-04-25
+
+- Auto release
+
+## v0.0.44 - 2025-04-25
+
 - Auto release
 
 ## v0.0.44 - 2025-04-25
