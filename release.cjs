@@ -1,4 +1,6 @@
 const { execSync } = require('child_process');
+const fs = require('fs');
+const path = require('path');
 
 const bump = process.argv[2] || 'patch';
 
@@ -28,20 +30,39 @@ function bumpVersion(version, level) {
   return parts.join('.');
 }
 
+// Fonction pour obtenir la version actuelle du package.json
+function getCurrentPackageVersion() {
+  const packageJsonPath = path.resolve(__dirname, 'package.json');
+  const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
+  return packageJson.version;
+}
+
 try {
   // Déterminer la dernière version
   let latestTag = getLatestGitTag();
   let newVersion = bumpVersion(latestTag || '0.0.0', bump);
 
   // Vérifier si ce tag existe déjà
-  try {
-    execSync(`git rev-parse v${newVersion}`);
+  while (true) {
+    try {
+      execSync(`git rev-parse v${newVersion}`);
+      console.log(
+        `⚠️ Tag v${newVersion} existe déjà. Incrémentation à la version suivante...`
+      );
+      newVersion = bumpVersion(newVersion, bump); // Incrémenter encore si le tag existe
+    } catch {
+      // Pas de problème si le tag n'existe pas
+      break;
+    }
+  }
+
+  // Vérifier si la version existe déjà dans package.json
+  const currentVersion = getCurrentPackageVersion();
+  if (newVersion === currentVersion) {
     console.log(
-      `⚠️ Tag v${newVersion} existe déjà. Incrémentation à la version suivante...`
+      `⚠️ La version v${newVersion} existe déjà dans package.json. Incrémentation à la version suivante...`
     );
-    newVersion = bumpVersion(newVersion, bump); // Incrémenter encore si le tag existe
-  } catch {
-    // Pas de problème si le tag n'existe pas
+    newVersion = bumpVersion(newVersion, bump); // Incrémenter encore si la version existe
   }
 
   console.log(`🚀 Nouvelle version : v${newVersion}`);
