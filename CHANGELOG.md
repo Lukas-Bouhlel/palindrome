@@ -37,7 +37,9 @@
 - Auto release
 
 ## v0.0.11 - 2025-04-25
+
 - Auto release
 
 ## v0.0.12 - 2025-04-25
+
 - Auto release

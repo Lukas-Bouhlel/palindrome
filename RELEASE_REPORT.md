@@ -1,12 +1,14 @@
 # Rapport de Release
+
 Outils Testés :
 release-it
 standard-version
 Script personnalisé (release.cjs)
 
 # Forces et Faiblesses de Chaque Outil
+
 1. release-it
-Forces :
+   Forces :
 
 Automatisation Complète : Automatise le processus de release, y compris la création de tags, la mise à jour du changelog, et le push vers le dépôt.
 Options de Configuration : Permet de configurer facilement les options de release via des flags ou un fichier de configuration.
@@ -18,7 +20,7 @@ Dépendance Externe : Nécessite l'installation de release-it via npm, ce qui pe
 Complexité de Configuration : Peut être complexe à configurer pour des besoins spécifiques.
 
 2. standard-version
-Forces :
+   Forces :
 
 Gestion du Changelog : Gère automatiquement la mise à jour du changelog en suivant les conventions de commit.
 Simplicité : Facile à utiliser avec des commandes simples pour définir le type de version (--release-as).
@@ -30,7 +32,7 @@ Moins de Flexibilité : Moins flexible que release-it pour des configurations sp
 Dépendance Externe : Nécessite l'installation de standard-version via npm.
 
 3. Script Personnalisé (release.cjs)
-Forces :
+   Forces :
 
 Contrôle Total : Offre un contrôle total sur le processus de release, permettant des personnalisations spécifiques.
 Indépendance : Ne dépend pas de bibliothèques externes pour la logique de release.
