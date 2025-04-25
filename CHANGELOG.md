@@ -33,4 +33,5 @@
 - Auto release
 
 ## v0.0.10 - 2025-04-24
+
 - Auto release
