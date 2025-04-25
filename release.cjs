@@ -51,17 +51,17 @@ try {
     stdio: 'inherit',
   });
 
-  // Commit et push des changements
-  execSync('git add .', { stdio: 'inherit' });
-  execSync(`git commit -m "chore(release): v${newVersion}"`, {
-    stdio: 'inherit',
-  });
+  // // Commit et push des changements
+  // execSync('git add .', { stdio: 'inherit' });
+  // execSync(`git commit -m "chore(release): v${newVersion}"`, {
+  //   stdio: 'inherit',
+  // });
 
   // Création du tag et push du tag vers GitHub
   execSync(`git tag v${newVersion}`, { stdio: 'inherit' });
-  execSync('git push origin HEAD:main', {
-    stdio: 'inherit',
-  });
+  // execSync('git push origin HEAD:main', {
+  //   stdio: 'inherit',
+  // });
 
   execSync('git push --tags', {
     stdio: 'inherit',
