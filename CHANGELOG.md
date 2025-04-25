@@ -77,4 +77,8 @@
 - Auto release
 
 ## v0.0.21 - 2025-04-25
+
+- Auto release
+
+## v0.0.22 - 2025-04-25
 - Auto release
