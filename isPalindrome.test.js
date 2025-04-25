@@ -11,7 +11,7 @@ test('Mot normal', () => {
 test('Mot vide', () => {
   expect(isPalindrome('')).toBe(true);
 });
-
+ 
 test('Non-string', () => {
   expect(isPalindrome(12321)).toBe(false);
 });
