@@ -43,9 +43,6 @@ function commitChanges() {
 }
 
 try {
-  // Commiter les changements avant de lancer la release
-  commitChanges();
-
   // Lancer le script de release
   console.log('🚀 Lancement du script de release...');
   execSync(`"${bashPath}" ${releaseScript}`, { stdio: 'inherit' });
@@ -56,6 +53,9 @@ try {
 
   // Mettre à jour le changelog
   updateChangelog(newVersion);
+
+  // Commiter les changements avant de lancer la release
+  commitChanges();
 
   console.log('✅ Release terminée.');
 } catch (err) {
