@@ -137,7 +137,9 @@
 - Auto release
 
 ## v0.0.39 - 2025-04-25
+
 - Auto release
 
 ## v0.0.40 - 2025-04-25
+
 - Auto release
