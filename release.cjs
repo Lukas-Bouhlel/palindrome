@@ -47,25 +47,17 @@ try {
   console.log(`🚀 Nouvelle version : v${newVersion}`);
 
   // Mise à jour de package.json sans créer un tag Git
-  execSync(`npm version ${newVersion} --no-git-tag-version`, {
-    stdio: 'inherit',
-  });
-
-  // // Commit et push des changements
-  // execSync('git add .', { stdio: 'inherit' });
-  // execSync(`git commit -m "chore(release): v${newVersion}"`, {
-  //   stdio: 'inherit',
-  // });
+  console.log(`Tentative de mise à jour de la version vers v${newVersion}`);
+  try {
+    execSync(`npm version ${newVersion} --no-git-tag-version`, { stdio: 'inherit' });
+  } catch (err) {
+    console.error(`Erreur lors de la mise à jour de la version : ${err.message}`);
+    throw err;
+  }
 
   // Création du tag et push du tag vers GitHub
   execSync(`git tag v${newVersion}`, { stdio: 'inherit' });
-  // execSync('git push origin HEAD:main', {
-  //   stdio: 'inherit',
-  // });
-
-  execSync('git push --tags', {
-    stdio: 'inherit',
-  });
+  execSync('git push --tags', { stdio: 'inherit' });
 
   console.log(`✅ Release v${newVersion} publiée avec succès.`);
 } catch (err) {
