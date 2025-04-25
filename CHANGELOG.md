@@ -75,11 +75,3 @@
 ## v0.0.20 - 2025-04-25
 - Auto release
 
-## v0.0.20 - 2025-04-25
-- Auto release
-
-## v0.0.20 - 2025-04-25
-- Auto release
-
-## v0.0.20 - 2025-04-25
-- Auto release
