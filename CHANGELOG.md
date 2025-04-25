@@ -162,12 +162,3 @@
 
 ## v0.0.44 - 2025-04-25
 - Auto release
-
-## v0.0.44 - 2025-04-25
-- Auto release
-
-## v0.0.44 - 2025-04-25
-- Auto release
-
-## v0.0.44 - 2025-04-25
-- Auto release
