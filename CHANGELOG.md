@@ -117,13 +117,21 @@
 - Auto release
 
 ## v0.0.31 - 2025-04-25
+
 - Auto release
 
 ## v0.0.33 - 2025-04-25
+
 - Auto release
 
 ## v0.0.35 - 2025-04-25
+
 - Auto release
 
 ## v0.0.37 - 2025-04-25
+
+- Auto release
+
+## v0.0.38 - 2025-04-25
+
 - Auto release
